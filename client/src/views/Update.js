@@ -23,7 +23,7 @@ const Update = (props) => {
     }, [id])
 
     const updateAuthor = author => {
-        axios.put("http://localhost:8000/api/author/"+id+"/update", author)
+        axios.put("http://localhost:8000/api/author/"+id, author)
             .then(res=> {
                 console.log("Response: ", res);
                 navigate("/author/"+id);

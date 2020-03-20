@@ -6,7 +6,7 @@ const DeleteButton = props => {
     const {authorID, successCallback} = props;
 
     const deleteAuthor = e => {
-        axios.delete("http://localhost:8000/api/author/"+authorID+"/destroy")
+        axios.delete("http://localhost:8000/api/author/"+authorID)
             .then(res => successCallback())
             .catch(err => console.log(err));
     }

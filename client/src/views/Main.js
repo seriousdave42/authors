@@ -19,7 +19,7 @@ const Main = () => {
     }, [])
 
     const newAuthor = author => {
-        axios.post("http://localhost:8000/api/author/create", author)
+        axios.post("http://localhost:8000/api/author", author)
             .then(res => {
                 setAuthors([...authors, res.data.author].sort((author1, author2) => author1.authorName > author2.authorName ? 1 : -1));
                 setErrors([])

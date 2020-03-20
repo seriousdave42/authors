@@ -27,7 +27,7 @@ const AuthorDetail = props => {
     }, [props.id])
 
     const quoteHandler = newQuote => {
-        axios.put("http://localhost:8000/api/author/"+props.id+"/update", {
+        axios.put("http://localhost:8000/api/author/"+props.id, {
             authorName: author.authorName,
             authorQuotes: [...quotes, newQuote]
         })
@@ -47,7 +47,7 @@ const AuthorDetail = props => {
     }
 
     const deleteQuote = (e, i) => {
-        axios.put("http://localhost:8000/api/author/"+props.id+"/update", {
+        axios.put("http://localhost:8000/api/author/"+props.id, {
             authorName: author.authorName,
             authorQuotes: [...quotes.slice(0,i), ...quotes.slice(i+1)]
         })
